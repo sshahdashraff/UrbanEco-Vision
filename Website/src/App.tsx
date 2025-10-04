@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Routes, Route, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Globe } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 // Import all pages
 import Home from './pages/Home';
@@ -12,7 +12,6 @@ import About from './pages/About';
 const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const [rtl, setRtl] = useState(false);
   const location = useLocation();
 
   const toggleMobileMenu = () => {
@@ -28,16 +27,7 @@ const App: React.FC = () => {
     }
   };
 
-  const toggleRtl = () => {
-    setRtl(!rtl);
-    if (!rtl) {
-      document.documentElement.dir = 'rtl';
-      document.documentElement.lang = 'ar';
-    } else {
-      document.documentElement.dir = 'ltr';
-      document.documentElement.lang = 'en';
-    }
-  };
+  
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -170,14 +160,7 @@ const App: React.FC = () => {
                 >
                   {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                 </button>
-                <button
-                  onClick={toggleRtl}
-                  className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all"
-                  aria-label="Toggle RTL mode"
-                >
-                  <Globe className="h-5 w-5" />
-                  <span className="sr-only">{rtl ? 'Switch to English' : 'التبديل إلى العربية'}</span>
-                </button>
+                
               </div>
             </div>
           </div>
