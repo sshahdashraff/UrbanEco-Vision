@@ -62,16 +62,16 @@ UrbanEco‑Vision is a sustainability‑focused project combining a modern web a
   - What‑if analysis with adjustable parameters
   - Explore future scenarios and their trade‑offs
 
-- **Upload & Analyze**
+- **Analyze**
 
-  - Bring your own datasets for quick exploration (where applicable)
+  - Explore and interpret built‑in datasets and forecasts within the app (no file uploads)
 
 - **Modern, Accessible UI**
   - Fast, responsive charts and components built with Radix UI + Recharts
 
 ## Pages
 
-- Home • Solar Dashboard • Water Quality Dashboard • Landscape Dashboard • Forecast Simulator • Upload & Analyze • About
+- Home • Solar Dashboard • Water Quality Dashboard • Landscape Dashboard • Forecast Simulator • Analyze • About
 
 ## Who Is It For?
 
@@ -113,7 +113,6 @@ For environmental sustainability, we utilized machine learning to predict water 
 - **Key Features**: Turbidity, pH, Dissolved Oxygen, Fecal Coliform
 
 **Outcome**: The model accurately forecasts water quality, allowing early pollution detection and informed decision‑making for sustainable water management.
-
 
 ## Tech Stack
 
@@ -207,7 +206,7 @@ Contributions are welcome! Feel free to open issues and pull requests.
 
 - **Does it work on mobile?** Yes—layouts and charts are responsive.
 - **How accurate are the forecasts?** Models are evaluated with metrics like R² and RMSE and can be retrained as data evolves.
-- **Can I use my own data?** Use the Upload & Analyze page (where applicable) or adapt the notebooks for custom datasets.
+- **Can I use my own data?** Not in the app yet. You can adapt the notebooks for custom datasets.
 - **Can I contribute?** Yes—see Contributing below.
 
 ## Contact
