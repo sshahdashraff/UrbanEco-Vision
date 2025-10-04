@@ -219,6 +219,14 @@ Have feedback or ideas? Please open an issue or reach out via your preferred cha
 - Satellite landscape animation created using NASA Worldview: https://worldview.earthdata.nasa.gov/
 - Before/after solar and landscape imagery sourced from NASA Earth Observatory: https://earthobservatory.nasa.gov/
 
+### NASA’s data use
+
+- Catching Rays in the Desert — Egypt (NASA Earth Observatory): https://earthobservatory.nasa.gov/images/145738/catching-rays-in-the-desert?utm
+- New Ground for an Ancient City — Cairo (NASA Earth Observatory): https://earthobservatory.nasa.gov/images/146521/new-ground-for-an-ancient-city?utm
+- Water Quality Topic Overview (NASA Earthdata): https://www.earthdata.nasa.gov/topics/ocean/water-quality?utm
+- Worldview Image Archive — Toshka Lakes, Egypt (NASA Earthdata): https://www.earthdata.nasa.gov/news/worldview-image-archive/toshka-lakes-egypt?utm
+- City Lights Illuminate the Nile (NASA Earth Observatory): https://earthobservatory.nasa.gov/images/79807/city-lights-illuminate-the-nile?utm
+
 ## Scripts (from `Website/package.json`)
 
 - **dev**: Start Vite dev server
