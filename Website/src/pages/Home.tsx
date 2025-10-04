@@ -407,7 +407,7 @@ const Home: React.FC = () => {
       {guardianIntroOpen && selectedGuardian && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-md" onClick={() => setGuardianIntroOpen(false)} />
-          <div className="relative z-10 w-full max-w-3xl mx-4 animate-fade-in-up" style={{ animationDuration: '500ms' }}>
+          <div className="relative z-10 w-full max-w-3xl mx-4 animate-fade-in-up max-h-[85vh] overflow-y-auto" style={{ animationDuration: '500ms' }}>
             <div className="rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-b from-[#0b2d33] to-[#1a5059] text-white border border-white/10">
               <div className="relative h-1 w-full">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#dda853] via-[#5c986a] to-[#84f4e6] animate-pulse" />
@@ -437,18 +437,38 @@ const Home: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="w-full rounded-2xl bg-white/10 border border-white/15 p-5 mb-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="rounded-xl p-4 bg-black/20">
-                      <div className="text-sm text-white/70 mb-2">Current</div>
-                      <div className="h-24 rounded-lg bg-black/20 flex items-center justify-center">skyline – inefficient</div>
-                    </div>
-                    <div className="rounded-xl p-4 bg-black/20">
-                      <div className="text-sm text-white/70 mb-2">Optimized</div>
-                      <div className="h-24 rounded-lg bg-black/20 flex items-center justify-center">cooler, cleaner city</div>
+                {selectedGuardian !== 'aqualis' && (
+                  <div className="w-full rounded-2xl bg-white/10 border border-white/15 p-5 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="rounded-xl p-4 bg-black/20">
+                        <div className="text-sm text-white/70 mb-2">Current</div>
+                        {selectedGuardian === 'solara' || selectedGuardian === 'terra' ? (
+                          <img
+                            src={`${import.meta.env.BASE_URL}Images/${selectedGuardian === 'terra' ? 'landscape_before.jpeg' : 'solar_before.jpeg'}`}
+                            alt="Current skyline – inefficient"
+                            className="w-full h-auto max-h-64 sm:max-h-72 object-contain rounded-lg"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="h-24 rounded-lg bg-black/20 flex items-center justify-center">skyline – inefficient</div>
+                        )}
+                      </div>
+                      <div className="rounded-xl p-4 bg-black/20">
+                        <div className="text-sm text-white/70 mb-2">Optimized</div>
+                        {selectedGuardian === 'solara' || selectedGuardian === 'terra' ? (
+                          <img
+                            src={`${import.meta.env.BASE_URL}Images/${selectedGuardian === 'terra' ? 'landscape_after.jpeg' : 'solar_after.jpeg'}`}
+                            alt="Optimized skyline – cooler, cleaner city"
+                            className="w-full h-auto max-h-64 sm:max-h-72 object-contain rounded-lg"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="h-24 rounded-lg bg-black/20 flex items-center justify-center">cooler, cleaner city</div>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
 
                 <ul className="space-y-3 mb-10">
                   {guardianDetails[selectedGuardian].points.map((p, idx) => (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Trees, Leaf, Droplets, DollarSign, TrendingUp, Award } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 // import satelliteGif from './public/images/satellite.gif'; // Ensure you have a satellite.gif in the images folder
@@ -243,7 +244,7 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
           <h3 className="text-xl font-semibold text-[#1a5059] mb-4">Satellite View</h3>
           <div className="flex justify-center">
             <img 
-                src="./public/Images/satelliteGif.gif"
+                src={`${import.meta.env.BASE_URL}Images/satelliteGif.gif`}
               alt="NASA Worldview Satellite Imagery"
               className="max-w-full h-auto rounded-lg shadow-md"
             />
@@ -265,12 +266,12 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
               >
                 Save Results
               </button>
-              <a
-                href="/city-builder"
+              <Link
+                to="/city-builder"
                 className="bg-white text-[#1a5059] border-2 border-[#84f4e6] hover:bg-[#c5d9a9]/20 font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300"
               >
                 Go to Game
-              </a>
+              </Link>
             </div>
           </>
         )}

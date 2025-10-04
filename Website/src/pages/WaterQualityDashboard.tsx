@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Droplet, AlertTriangle, CheckCircle, TrendingUp, Activity } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -362,12 +363,12 @@ const WaterQualityDashboard: React.FC<WaterQualityDashboardProps> = ({ waterResu
           >
             Save Results
           </button>
-          <a
-            href="/city-builder"
+          <Link
+            to="/city-builder"
             className="bg-white text-[#1a5059] border-2 border-[#84f4e6] hover:bg-[#c5d9a9]/20 font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300"
           >
             Go to Game
-          </a>
+          </Link>
         </div>
       </div>
     </div>
