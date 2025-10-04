@@ -30,6 +30,7 @@ UrbanEco‑Vision is a sustainability‑focused project combining a modern web a
 - Contributing
 - FAQ
 - Contact
+- References
 
 ### Why UrbanEco‑Vision?
 
@@ -212,6 +213,11 @@ Contributions are welcome! Feel free to open issues and pull requests.
 ## Contact
 
 Have feedback or ideas? Please open an issue or reach out via your preferred channel.
+
+## References
+
+- Satellite landscape animation created using NASA Worldview: https://worldview.earthdata.nasa.gov/
+- Before/after solar and landscape imagery sourced from NASA Earth Observatory: https://earthobservatory.nasa.gov/
 
 ## Scripts (from `Website/package.json`)
 
