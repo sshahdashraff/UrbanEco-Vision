@@ -52,30 +52,30 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-900 dark:to-gray-800 dark:text-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#1a5059] mb-2 flex items-center justify-center gap-3">
+          <h1 className="text-4xl font-bold text-[#1a5059] dark:text-white mb-2 flex items-center justify-center gap-3">
             <Trees className="h-10 w-10 text-[#5c986a]" />
             Landscape Environmental Impact Dashboard
           </h1>
-          <p className="text-gray-600">{location} • CO₂ Sequestration & Oxygen Production Analysis</p>
+          <p className="text-gray-600 dark:text-gray-300">{location} • CO₂ Sequestration & Oxygen Production Analysis</p>
         </div>
 
         {/* Results Dashboard */}
         {results && (
           <>
             {/* Environmental Score */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border-2 border-[#5c986a]/20">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-8 border-2 border-[#5c986a]/20 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <Award className="h-12 w-12" style={{ color: results.scoreColor }} />
                   <div>
-                    <h2 className="text-3xl font-bold text-[#1a5059]">Environmental Score: {results.envScore}</h2>
+                    <h2 className="text-3xl font-bold text-[#1a5059] dark:text-white">Environmental Score: {results.envScore}</h2>
                     <p className="text-lg font-semibold" style={{ color: results.scoreColor }}>
                       Rating: {results.scoreCategory}
                     </p>
-                    <p className="text-gray-600 mt-1">{results.plantDescription}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mt-1">{results.plantDescription}</p>
                   </div>
                 </div>
                 <div className="text-center">
@@ -100,11 +100,11 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
 
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 p-6 rounded-2xl border-2 border-blue-500/30 shadow-lg">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-sm font-medium text-gray-700">O₂ Production</h3>
+                  <h3 className="text-sm font-medium text-gray-700 dark:text-gray-200">O₂ Production</h3>
                   <TrendingUp className="h-6 w-6 text-blue-600" />
                 </div>
-                <p className="text-3xl font-bold text-[#1a5059]">{results.o2ProductionM3PerYear} m³/yr</p>
-                <p className="text-xs text-gray-600 mt-1">For {results.equivalencies.peopleO2Equivalent} people</p>
+                <p className="text-3xl font-bold text-[#1a5059] dark:text-white">{results.o2ProductionM3PerYear} m³/yr</p>
+                <p className="text-xs text-gray-600 dark:text-gray-300 mt-1">For {results.equivalencies.peopleO2Equivalent} people</p>
               </div>
 
               <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 p-6 rounded-2xl border-2 border-cyan-500/30 shadow-lg">
@@ -127,23 +127,23 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
             </div>
 
             {/* Environmental Equivalencies */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 border-2 border-[#5c986a]/20">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8 border-2 border-[#5c986a]/20 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-[#1a5059] mb-6">Environmental Impact Equivalencies</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 bg-green-50 rounded-xl border-2 border-green-200">
+                <div className="p-4 bg-green-50 dark:bg-gray-700/40 rounded-xl border-2 border-green-200 dark:border-gray-700">
                   <h4 className="font-semibold text-green-800 mb-2">Car Emissions Offset</h4>
-                  <p className="text-3xl font-bold text-green-700">{formatNumber(results.equivalencies.carKmEquivalent)} km</p>
-                  <p className="text-sm text-gray-600 mt-1">of driving per year</p>
+                  <p className="text-3xl font-bold text-green-700 dark:text-green-300">{formatNumber(results.equivalencies.carKmEquivalent)} km</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">of driving per year</p>
                 </div>
-                <div className="p-4 bg-blue-50 rounded-xl border-2 border-blue-200">
+                <div className="p-4 bg-blue-50 dark:bg-gray-700/40 rounded-xl border-2 border-blue-200 dark:border-gray-700">
                   <h4 className="font-semibold text-blue-800 mb-2">Tree Equivalent</h4>
-                  <p className="text-3xl font-bold text-blue-700">{results.equivalencies.treesEquivalent}</p>
-                  <p className="text-sm text-gray-600 mt-1">mature trees' CO₂ absorption</p>
+                  <p className="text-3xl font-bold text-blue-700 dark:text-blue-300">{results.equivalencies.treesEquivalent}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">mature trees' CO₂ absorption</p>
                 </div>
-                <div className="p-4 bg-cyan-50 rounded-xl border-2 border-cyan-200">
+                <div className="p-4 bg-cyan-50 dark:bg-gray-700/40 rounded-xl border-2 border-cyan-200 dark:border-gray-700">
                   <h4 className="font-semibold text-cyan-800 mb-2">Oxygen for People</h4>
-                  <p className="text-3xl font-bold text-cyan-700">{results.equivalencies.peopleO2Equivalent}</p>
-                  <p className="text-sm text-gray-600 mt-1">people's annual O₂ needs</p>
+                  <p className="text-3xl font-bold text-cyan-700 dark:text-cyan-300">{results.equivalencies.peopleO2Equivalent}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">people's annual O₂ needs</p>
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
             {/* Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               {/* CO₂ Reduction Over Time */}
-              <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
                 <h3 className="text-xl font-semibold text-[#1a5059] mb-4">CO₂ Sequestration (25 Years)</h3>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
@@ -170,7 +170,7 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
               </div>
 
               {/* Cumulative Environmental Impact */}
-              <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
                 <h3 className="text-xl font-semibold text-[#1a5059] mb-4">Cumulative CO₂ Sequestration</h3>
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
@@ -190,57 +190,57 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
             </div>
 
             {/* Resource Breakdown */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 border-2 border-[#5c986a]/20">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8 border-2 border-[#5c986a]/20 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-[#1a5059] mb-6">Resource Analysis</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="text-gray-700">Area Covered</span>
-                    <span className="font-bold text-[#1a5059]">{results.areaM2} m²</span>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/40 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-200">Area Covered</span>
+                    <span className="font-bold text-[#1a5059] dark:text-white">{results.areaM2} m²</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="text-gray-700">CO₂ Factor (per m²)</span>
-                    <span className="font-bold text-[#1a5059]">{results.factors.co2FactorPerM2} kg/m²/yr</span>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/40 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-200">CO₂ Factor (per m²)</span>
+                    <span className="font-bold text-[#1a5059] dark:text-white">{results.factors.co2FactorPerM2} kg/m²/yr</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="text-gray-700">O₂ Factor (per m²)</span>
-                    <span className="font-bold text-[#1a5059]">{formatNumber(results.factors.o2FactorPerM2)} L/m²/yr</span>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/40 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-200">O₂ Factor (per m²)</span>
+                    <span className="font-bold text-[#1a5059] dark:text-white">{formatNumber(results.factors.o2FactorPerM2)} L/m²/yr</span>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="text-gray-700">Water Use (per m²)</span>
-                    <span className="font-bold text-[#1a5059]">{results.factors.waterUsePerM2} L/m²/yr</span>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/40 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-200">Water Use (per m²)</span>
+                    <span className="font-bold text-[#1a5059] dark:text-white">{results.factors.waterUsePerM2} L/m²/yr</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="text-gray-700">Planting Cost</span>
-                    <span className="font-bold text-[#1a5059]">{formatNumber(results.plantingCost)} USD</span>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/40 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-200">Planting Cost</span>
+                    <span className="font-bold text-[#1a5059] dark:text-white">{formatNumber(results.plantingCost)} USD</span>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                    <span className="text-gray-700">Annual Maintenance</span>
-                    <span className="font-bold text-[#1a5059]">{formatNumber(results.annualMaintenanceCost)} USD</span>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/40 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-200">Annual Maintenance</span>
+                    <span className="font-bold text-[#1a5059] dark:text-white">{formatNumber(results.annualMaintenanceCost)} USD</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Recommendations */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-[#1a5059] mb-4 flex items-center gap-2">
                 <Leaf className="h-6 w-6 text-[#5c986a]" />
                 Recommendations
               </h3>
               <ul className="space-y-3">
                 {results.recommendations.map((rec: string, index: number) => (
-                  <li key={index} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+                  <li key={index} className="flex items-start gap-3 p-3 bg-green-50 dark:bg-gray-700/40 rounded-lg">
                     <Leaf className="h-5 w-5 text-[#5c986a] mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{rec}</span>
+                    <span className="text-gray-700 dark:text-gray-200">{rec}</span>
                   </li>
                 ))}
               </ul>
             </div>
         {/* Satellite Imagery */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 border-2 border-[#5c986a]/20">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 mb-8 border-2 border-[#5c986a]/20 dark:border-gray-700">
           <h3 className="text-xl font-semibold text-[#1a5059] mb-4">Satellite View</h3>
           <div className="flex justify-center">
             <img 
@@ -249,7 +249,7 @@ const LandscapeDashboard: React.FC<LandscapeDashboardProps> = ({ landscapeResult
               className="max-w-full h-auto rounded-lg shadow-md"
             />
           </div>
-          <p className="text-sm text-gray-500 text-center mt-3">NASA Worldview - {location}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-300 text-center mt-3">NASA Worldview - {location}</p>
         </div>
 
             {/* Action Buttons (Unified style) */}

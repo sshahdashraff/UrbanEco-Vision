@@ -72,23 +72,23 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-900 dark:to-gray-800 dark:text-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#5c986a] to-[#84f4e6] flex items-center justify-center">
                 <Sun className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-[#1a5059]">Solar Energy Dashboard</h1>
-                <p className="text-gray-600">{location} • {sectorType.charAt(0).toUpperCase() + sectorType.slice(1)}</p>
+                <h1 className="text-3xl font-bold text-[#1a5059] dark:text-white">Solar Energy Dashboard</h1>
+                <p className="text-gray-600 dark:text-gray-300">{location} • {sectorType.charAt(0).toUpperCase() + sectorType.slice(1)}</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="text-sm text-gray-500 mb-1">Analysis Date</p>
-              <p className="text-lg font-semibold text-[#1a5059]">{new Date().toLocaleDateString()}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Analysis Date</p>
+              <p className="text-lg font-semibold text-[#1a5059] dark:text-white">{new Date().toLocaleDateString()}</p>
             </div>
           </div>
         </div>
@@ -110,46 +110,46 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
 
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
             <div className="flex items-center justify-between mb-2">
               <Zap className="h-8 w-8 text-[#5c986a]" />
               <span className="text-sm font-semibold px-3 py-1 rounded-full bg-[#5c986a]/10 text-[#5c986a]">
                 System Size
               </span>
             </div>
-            <h3 className="text-4xl font-bold text-[#1a5059] mb-1">{solarResults.systemSizeKwp}</h3>
+            <h3 className="text-4xl font-bold text-[#1a5059] dark:text-white mb-1">{solarResults.systemSizeKwp}</h3>
             <p className="text-sm text-gray-600">kWp Capacity</p>
             <p className="text-xs text-gray-500 mt-2">Production Factor: {solarResults.productionFactor} kWh/kWp/yr</p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#84f4e6]/20">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#84f4e6]/20 dark:border-gray-700">
             <div className="flex items-center justify-between mb-2">
               <Sun className="h-8 w-8 text-[#84f4e6]" />
               <CheckCircle className="h-6 w-6 text-[#5c986a]" />
             </div>
-            <h3 className="text-4xl font-bold text-[#1a5059] mb-1">{solarResults.annualProduction.toLocaleString()}</h3>
+            <h3 className="text-4xl font-bold text-[#1a5059] dark:text-white mb-1">{solarResults.annualProduction.toLocaleString()}</h3>
             <p className="text-sm text-gray-600">Annual Production (kWh)</p>
             <p className="text-xs text-gray-500 mt-2">Coverage: {solarResults.solarCoveragePercent}% of consumption</p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
             <div className="flex items-center justify-between mb-2">
               <TrendingUp className="h-8 w-8 text-[#5c986a]" />
               <span className="text-sm font-semibold px-3 py-1 rounded-full bg-[#5c986a]/10 text-[#5c986a]">
                 ROI {solarResults.roi}%
               </span>
             </div>
-            <h3 className="text-4xl font-bold text-[#1a5059] mb-1">{solarResults.paybackYears}</h3>
-            <p className="text-sm text-gray-600">Payback Period (Years)</p>
-            <p className="text-xs text-gray-500 mt-2">Net savings: {solarResults.netSavings.toLocaleString()} EGP/yr</p>
+            <h3 className="text-4xl font-bold text-[#1a5059] dark:text-white mb-1">{solarResults.paybackYears}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Payback Period (Years)</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Net savings: {solarResults.netSavings.toLocaleString()} EGP/yr</p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#84f4e6]/20">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#84f4e6]/20 dark:border-gray-700">
             <div className="flex items-center justify-between mb-2">
               <DollarSign className="h-8 w-8 text-[#84f4e6]" />
               <Activity className="h-6 w-6 text-[#5c986a]" />
             </div>
-            <h3 className="text-4xl font-bold text-[#1a5059] mb-1">{solarResults.installationCost.toLocaleString()}</h3>
+            <h3 className="text-4xl font-bold text-[#1a5059] dark:text-white mb-1">{solarResults.installationCost.toLocaleString()}</h3>
             <p className="text-sm text-gray-600">Installation Cost (EGP)</p>
             {/* Optional: Maintenance cost not provided in results type */}
           </div>
@@ -158,8 +158,8 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
         {/* Charts Row 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Financial Projection */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
-            <h3 className="text-xl font-bold text-[#1a5059] mb-4 flex items-center">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
+            <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-4 flex items-center">
               <TrendingUp className="h-5 w-5 mr-2 text-[#5c986a]" />
               25-Year Financial Projection
             </h3>
@@ -185,8 +185,8 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
           </div>
 
           {/* Monthly Production Estimate */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#84f4e6]/20">
-            <h3 className="text-xl font-bold text-[#1a5059] mb-4 flex items-center">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#84f4e6]/20 dark:border-gray-700">
+            <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-4 flex items-center">
               <Sun className="h-5 w-5 mr-2 text-[#84f4e6]" />
               Estimated Monthly Production
             </h3>
@@ -208,8 +208,8 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
         {/* Charts Row 2 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Production Over Time */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
-            <h3 className="text-xl font-bold text-[#1a5059] mb-4 flex items-center">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
+            <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-4 flex items-center">
               <Activity className="h-5 w-5 mr-2 text-[#5c986a]" />
               Production Degradation (25 Years)
             </h3>
@@ -229,8 +229,8 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
           </div>
 
           {/* Environmental Impact */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
-            <h3 className="text-xl font-bold text-[#1a5059] mb-4 flex items-center">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
+            <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-4 flex items-center">
               <Leaf className="h-5 w-5 mr-2 text-[#5c986a]" />
               Cumulative CO₂ Reduction
             </h3>
@@ -253,7 +253,7 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
         </div>
 
         {/* Financial Details */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-2 border-[#5c986a]/20 dark:border-gray-700">
           <h3 className="text-xl font-bold text-[#1a5059] mb-4 flex items-center">
             <DollarSign className="h-5 w-5 mr-2 text-[#5c986a]" />
             Financial Breakdown
@@ -261,7 +261,7 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200">
               <p className="text-sm text-gray-600 mb-1">Current Annual Bill</p>
-              <p className="text-2xl font-bold text-[#1a5059]">{solarResults.currentBill.toLocaleString()} EGP</p>
+              <p className="text-2xl font-bold text-[#1a5059] dark:text-white">{solarResults.currentBill.toLocaleString()} EGP</p>
               <p className="text-xs text-gray-500 mt-1">Average tariff: {solarResults.weightedTariff} EGP/kWh</p>
             </div>
             <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-[#5c986a]/30">
@@ -305,7 +305,7 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6">
           <button
             onClick={onAnalyzeAgain}
-            className="group glass border-2 border-[#5c986a] text-[#1a5059] font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300 hover:bg-[#5c986a]/10 transform hover:scale-105"
+            className="group glass border-2 border-[#5c986a] text-[#1a5059] dark:text-white font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300 hover:bg-[#5c986a]/10 transform hover:scale-105"
           >
             Analyze Again
           </button>
@@ -317,7 +317,7 @@ const SolarDashboard: React.FC<SolarDashboardProps> = ({ solarResults, location,
           </button>
           <Link
             to="/city-builder"
-            className="bg-white text-[#1a5059] border-2 border-[#84f4e6] hover:bg-[#c5d9a9]/20 font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300"
+            className="bg-white dark:bg-gray-700 text-[#1a5059] dark:text-white border-2 border-[#84f4e6] dark:border-gray-600 hover:bg-[#c5d9a9]/20 dark:hover:bg-gray-600 font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300"
           >
             Go to Game
           </Link>

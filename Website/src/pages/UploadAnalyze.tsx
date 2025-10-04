@@ -271,7 +271,7 @@ const UploadAnalyze: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#c5d9a9]/20 via-white to-[#84f4e6]/20 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#c5d9a9]/20 via-white to-[#84f4e6]/20 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 py-12 px-4 sm:px-6 lg:px-8">
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -342,7 +342,7 @@ const UploadAnalyze: React.FC = () => {
       <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#84f4e6] rounded-full opacity-10 blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="glass rounded-3xl shadow-2xl overflow-hidden border border-[#84f4e6]/30 animate-fade-in-up">
+        <div className="glass dark:bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden border border-[#84f4e6]/30 dark:border-gray-700 animate-fade-in-up">
           <div className={`bg-gradient-to-r ${getObjectiveColor(formData.objective)} p-8`}>
             <div className="flex items-center justify-center mb-4">
               <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center animate-pulse-glow">
@@ -361,8 +361,8 @@ const UploadAnalyze: React.FC = () => {
             {isLoading ? (
               <div className="flex flex-col items-center justify-center py-16 animate-scale-in">
                 <div className="w-16 h-16 rounded-full border-4 border-[#84f4e6]/40 border-t-[#5c986a] animate-spin mb-4" />
-                <h3 className="text-xl font-bold text-[#1a5059] mb-1">Preparing your dashboard...</h3>
-                <p className="text-sm text-[#2b515a]">Crunching numbers, drawing insights, crafting visuals</p>
+                <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-1">Preparing your dashboard...</h3>
+                <p className="text-sm text-[#2b515a] dark:text-gray-300">Crunching numbers, drawing insights, crafting visuals</p>
               </div>
             ) : processingComplete ? (
               <div className="animate-scale-in">
@@ -401,10 +401,10 @@ const UploadAnalyze: React.FC = () => {
                     <div className="w-24 h-24 bg-gradient-to-br from-[#5c986a] to-[#84f4e6] rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-glow">
                       <CheckCircle className="w-12 h-12 text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold text-[#1a5059] mb-4">
+                    <h2 className="text-3xl font-bold text-[#1a5059] dark:text-white mb-4">
                       Analysis Complete!
                     </h2>
-                    <p className="text-[#2b515a] text-lg mb-8 max-w-md mx-auto">
+                    <p className="text-[#2b515a] dark:text-gray-300 text-lg mb-8 max-w-md mx-auto">
                       Your {formData.objective} potential has been analyzed successfully.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -431,11 +431,11 @@ const UploadAnalyze: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="animate-fade-in-up stagger-2">
                 <div className="mb-8">
-                  <label className="block text-lg font-bold text-[#1a5059] mb-2 flex items-center">
+                  <label className="block text-lg font-bold text-[#1a5059] dark:text-white mb-2 flex items-center">
                     <Sparkles className="h-5 w-5 mr-2 text-[#dda853]" />
                     Which path would you like to explore?
                   </label>
-                  <p className="text-sm text-[#2b515a] mb-4">Start your story with sun, water, or green.</p>
+                  <p className="text-sm text-[#2b515a] dark:text-gray-300 mb-4">Start your story with sun, water, or green.</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {[
                       { value: 'solar', icon: Sun, label: 'SOLARA', color: 'from-[#dda853] to-[#5c986a]' },
@@ -448,11 +448,11 @@ const UploadAnalyze: React.FC = () => {
                         className={`cursor-pointer p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${
                           formData.objective === obj.value
                             ? `bg-gradient-to-br ${obj.color} text-white border-transparent shadow-lg`
-                            : 'glass border-[#84f4e6]/30 hover:border-[#5c986a]'
+                            : 'glass dark:bg-gray-700/50 border-[#84f4e6]/30 dark:border-gray-600 hover:border-[#5c986a] dark:hover:border-gray-500'
                         }`}
                       >
                         <obj.icon className={`h-8 w-8 mx-auto mb-3 ${formData.objective === obj.value ? 'text-white' : 'text-[#5c986a]'}`} />
-                        <p className={`text-center font-semibold ${formData.objective === obj.value ? 'text-white' : 'text-[#1a5059]'}`}>
+                        <p className={`text-center font-semibold ${formData.objective === obj.value ? 'text-white' : 'text-[#1a5059] dark:text-white'}`}>
                           {obj.label}
                         </p>
                       </div>
@@ -464,47 +464,47 @@ const UploadAnalyze: React.FC = () => {
                 {/* SOLAR FORM */}
                 {formData.objective === 'solar' && (
                   <div className="space-y-6 animate-fade-in-up">
-                    <div className="glass p-6 rounded-2xl border border-[#84f4e6]/30">
-                      <h3 className="text-xl font-bold text-[#1a5059] mb-1 flex items-center">
+                    <div className="glass dark:bg-gray-700/50 p-6 rounded-2xl border border-[#84f4e6]/30 dark:border-gray-600">
+                      <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-1 flex items-center">
                         <Zap className="h-5 w-5 mr-2 text-[#dda853]" />
                         Tell us about your energy scene
                       </h3>
-                      <p className="text-sm text-[#2b515a] mb-4">We’ll turn your monthly story into a solar plan.</p>
+                      <p className="text-sm text-[#2b515a] dark:text-gray-300 mb-4">We'll turn your monthly story into a solar plan.</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What’s your monthly electricity bill (EGP)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What’s your monthly electricity bill (EGP)?</label>
                           <input
                             type="number"
                             name="billAmount"
                             value={formData.billAmount}
                             onChange={handleInputChange}
                             placeholder="e.g., 2500"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">How many kWh do you use each month?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">How many kWh do you use each month?</label>
                           <input
                             type="number"
                             name="consumption"
                             value={formData.consumption}
                             onChange={handleInputChange}
                             placeholder="e.g., 1200"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             required
                           />
                           {errors.consumption && <p className="mt-1 text-xs text-red-600">{errors.consumption}</p>}
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">Where is your site located?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">Where is your site located?</label>
                           <select
                             name="location"
                             value={formData.location}
                             onChange={handleInputChange}
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             required
                           >
                             <option value="">Select location</option>
@@ -516,12 +516,12 @@ const UploadAnalyze: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">Which sector describes your site?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">Which sector describes your site?</label>
                           <select
                             name="sectorType"
                             value={formData.sectorType}
                             onChange={handleInputChange}
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             required
                           >
                             <option value="">Select sector</option>
@@ -533,21 +533,21 @@ const UploadAnalyze: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">How much roof can host solar (m²)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">How much roof can host solar (m²)?</label>
                           <input
                             type="number"
                             name="space"
                             value={formData.space}
                             onChange={handleInputChange}
                             placeholder="e.g., 150"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             required
                           />
                           {errors.space && <p className="mt-1 text-xs text-red-600">{errors.space}</p>}
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">How much solar coverage would you like (%)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">How much solar coverage would you like (%)?</label>
                           <input
                             type="range"
                             name="coverage"
@@ -567,48 +567,48 @@ const UploadAnalyze: React.FC = () => {
                 {/* Landscape Form */}
                 {formData.objective === 'landscape' && (
                   <div className="space-y-6 animate-fade-in-up">
-                    <div className="glass p-6 rounded-2xl border border-[#84f4e6]/30">
-                      <h3 className="text-xl font-bold text-[#1a5059] mb-1 flex items-center">
+                    <div className="glass dark:bg-gray-700/50 p-6 rounded-2xl border border-[#84f4e6]/30 dark:border-gray-600">
+                      <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-1 flex items-center">
                         <Leaf className="h-5 w-5 mr-2 text-[#5c986a]" />
                         Tell us about your green space
                       </h3>
-                      <p className="text-sm text-[#2b515a] mb-4">We’ll estimate cooling, CO₂ capture, and costs.</p>
+                      <p className="text-sm text-[#2b515a] dark:text-gray-300 mb-4">We'll estimate cooling, CO₂ capture, and costs.</p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">How large is the area to be planted (m²)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">How large is the area to be planted (m²)?</label>
                           <input
                             type="number"
                             name="area_m2"
                             value={formData.area_m2}
                             onChange={handleInputChange}
                             placeholder="e.g., 600"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                           {errors.area_m2 && <p className="mt-1 text-xs text-red-600">{errors.area_m2}</p>}
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">Where will your green space live?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">Where will your green space live?</label>
                           <input
                             type="text"
                             name="location"
                             value={formData.location}
                             onChange={handleInputChange}
                             placeholder="e.g., Cairo • Nasr City"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                           {errors.location && <p className="mt-1 text-xs text-red-600">{errors.location}</p>}
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What planting style do you envision?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What planting style do you envision?</label>
                           {errors.plantType && <p className="mt-1 text-xs text-red-600">{errors.plantType}</p>}
                           <select
                             name="plantType"
                             value={formData.plantType}
                             onChange={handleInputChange}
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           >
                             <option value="">Select plant type</option>
                             <option value="ShadeTree">Shade Tree</option>
@@ -619,13 +619,13 @@ const UploadAnalyze: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What’s the water source?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What’s the water source?</label>
                           {errors.waterSource && <p className="mt-1 text-xs text-red-600">{errors.waterSource}</p>}
                           <select
                             name="waterSource"
                             value={formData.waterSource}
                             onChange={handleInputChange}
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           >
                             <option value="">Select water source</option>
                             <option value="DrinkingWater">Drinking Water</option>
@@ -635,26 +635,26 @@ const UploadAnalyze: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">Estimated cost per m²? (optional)</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">Estimated cost per m²? (optional)</label>
                           <input
                             type="number"
                             name="cost_per_m2"
                             value={formData.cost_per_m2}
                             onChange={handleInputChange}
                             placeholder="Enter cost per m² or leave blank"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">How many years of maintenance? (optional)</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">How many years of maintenance? (optional)</label>
                           <input
                             type="number"
                             name="maintenance_years"
                             value={formData.maintenance_years}
                             onChange={handleInputChange}
                             placeholder="Enter number of years"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
                       </div>
@@ -670,32 +670,32 @@ const UploadAnalyze: React.FC = () => {
                                 {/* Water Form */}
                 {formData.objective === 'water' && (
                   <div className="space-y-6 animate-fade-in-up">
-                    <div className="glass p-6 rounded-2xl border border-[#84f4e6]/30">
-                      <h3 className="text-xl font-bold text-[#1a5059] mb-1 flex items-center">
+                    <div className="glass dark:bg-gray-700/50 p-6 rounded-2xl border border-[#84f4e6]/30 dark:border-gray-600">
+                      <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-1 flex items-center">
                         <Droplet className="h-5 w-5 mr-2 text-[#84f4e6]" />
                         Tell us about your water sample
                       </h3>
-                      <p className="text-sm text-[#2b515a] mb-4">We’ll assess quality and recommend actions.</p>
+                      <p className="text-sm text-[#2b515a] dark:text-gray-300 mb-4">We'll assess quality and recommend actions.</p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">Where are we assessing water quality?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">Where are we assessing water quality?</label>
                           <input
                             type="text"
                             name="location"
                             value={formData.location}
                             onChange={handleInputChange}
                             placeholder="e.g., Alexandria • Al Attarin"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">Which sector best fits your use?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">Which sector best fits your use?</label>
                           <select
                             name="sectorType"
                             value={formData.sectorType}
                             onChange={handleInputChange}
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           >
                             <option value="">Select sector</option>
                             <option value="domestic">Domestic</option>
@@ -705,7 +705,7 @@ const UploadAnalyze: React.FC = () => {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What is the turbidity (NTU)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What is the turbidity (NTU)?</label>
                           <input
                             type="number"
                             step="0.01"
@@ -713,12 +713,12 @@ const UploadAnalyze: React.FC = () => {
                             value={formData.turbidity}
                             onChange={handleInputChange}
                             placeholder="e.g., 2.5"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What’s the pH value?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What’s the pH value?</label>
                           <input
                             type="number"
                             step="0.1"
@@ -726,12 +726,12 @@ const UploadAnalyze: React.FC = () => {
                             value={formData.pH}
                             onChange={handleInputChange}
                             placeholder="e.g., 7.2"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">How much dissolved oxygen (mg/L)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">How much dissolved oxygen (mg/L)?</label>
                           <input
                             type="number"
                             step="0.01"
@@ -739,12 +739,12 @@ const UploadAnalyze: React.FC = () => {
                             value={formData.dissolvedOxygen}
                             onChange={handleInputChange}
                             placeholder="e.g., 6.5"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What’s the total dissolved solids (mg/L)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What’s the total dissolved solids (mg/L)?</label>
                           <input
                             type="number"
                             step="1"
@@ -752,12 +752,12 @@ const UploadAnalyze: React.FC = () => {
                             value={formData.TDS}
                             onChange={handleInputChange}
                             placeholder="e.g., 350"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What’s the BOD (mg/L)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What’s the BOD (mg/L)?</label>
                           <input
                             type="number"
                             step="0.01"
@@ -765,12 +765,12 @@ const UploadAnalyze: React.FC = () => {
                             value={formData.BOD}
                             onChange={handleInputChange}
                             placeholder="e.g., 3.1"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-sm font-semibold text-[#2b515a] mb-1">What’s the nitrate (mg/L)?</label>
+                          <label className="block text-sm font-semibold text-[#2b515a] dark:text-gray-300 mb-1">What’s the nitrate (mg/L)?</label>
                           <input
                             type="number"
                             step="0.01"
@@ -778,7 +778,7 @@ const UploadAnalyze: React.FC = () => {
                             value={formData.nitrate}
                             onChange={handleInputChange}
                             placeholder="e.g., 12"
-                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none"
+                            className="w-full p-3 rounded-xl border border-[#84f4e6]/30 dark:border-gray-600 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                           />
                         </div>
 
@@ -793,7 +793,7 @@ const UploadAnalyze: React.FC = () => {
                             onChange={handleFileChange}
                             className="w-full p-3 rounded-xl border border-[#84f4e6]/30 focus:ring-2 focus:ring-[#5c986a] focus:outline-none bg-white"
                           />
-                          <p className="text-xs text-[#5c986a] mt-1">Upload water quality data file for batch analysis</p>
+                          <p className="text-xs text-[#5c986a] dark:text-gray-400 mt-1">Upload water quality data file for batch analysis</p>
                         </div>
                       </div>
                     </div>
@@ -812,7 +812,7 @@ const UploadAnalyze: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => navigate('/city-builder')}
-                    className="bg-white text-[#1a5059] border-2 border-[#84f4e6] hover:bg-[#c5d9a9]/20 font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300"
+                    className="bg-white dark:bg-gray-700 text-[#1a5059] dark:text-white border-2 border-[#84f4e6] dark:border-gray-600 hover:bg-[#c5d9a9]/20 dark:hover:bg-gray-600 font-bold py-4 px-8 rounded-full inline-flex items-center justify-center transition-all duration-300"
                   >
                     Go to Game
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -820,7 +820,7 @@ const UploadAnalyze: React.FC = () => {
                 </div>
                 {notice && (
                   <div className="mt-4 text-center" aria-live="polite">
-                    <div className="inline-block rounded-xl border-2 border-[#84f4e6]/40 bg-white/80 text-[#1a5059] px-4 py-3 text-sm">
+                    <div className="inline-block rounded-xl border-2 border-[#84f4e6]/40 dark:border-gray-600 bg-white/80 dark:bg-gray-700/80 text-[#1a5059] dark:text-white px-4 py-3 text-sm">
                       {notice}
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, Routes, Route, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Sun, Moon, ArrowLeft, ArrowRight } from 'lucide-react';
 
 // Import all pages
 import Home from './pages/Home';
@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -25,6 +26,24 @@ const App: React.FC = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+  };
+
+  const getNavigationSequence = () => {
+    return ['/', '/uploadanalyze', '/city-builder', '/forecast', '/about'];
+  };
+
+  const handleBack = () => {
+    const sequence = getNavigationSequence();
+    const currentIndex = sequence.indexOf(location.pathname);
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : sequence.length - 1;
+    navigate(sequence[prevIndex]);
+  };
+
+  const handleForward = () => {
+    const sequence = getNavigationSequence();
+    const currentIndex = sequence.indexOf(location.pathname);
+    const nextIndex = currentIndex < sequence.length - 1 ? currentIndex + 1 : 0;
+    navigate(sequence[nextIndex]);
   };
 
   
@@ -83,6 +102,20 @@ const App: React.FC = () => {
   </Link>
 </div>            </div>
             <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-2">
+              <button
+                onClick={handleBack}
+                className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all duration-300 transform hover:scale-110"
+                aria-label="Go back"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={handleForward}
+                className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all duration-300 transform hover:scale-110"
+                aria-label="Go forward"
+              >
+                <ArrowRight className="h-5 w-5" />
+              </button>
               <button
                 onClick={toggleDarkMode}
                 className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all duration-300 transform hover:scale-110"
@@ -154,13 +187,26 @@ const App: React.FC = () => {
             <div className="pt-4 pb-3 border-t border-[#84f4e6]/20">
               <div className="flex items-center px-4 space-x-3">
                 <button
+                  onClick={handleBack}
+                  className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all"
+                  aria-label="Go back"
+                >
+                  <ArrowLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={handleForward}
+                  className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all"
+                  aria-label="Go forward"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                </button>
+                <button
                   onClick={toggleDarkMode}
                   className="p-3 rounded-xl text-gray-600 hover:text-[#5c986a] hover:bg-[#c5d9a9]/20 focus:outline-none transition-all"
                   aria-label="Toggle dark mode"
                 >
                   {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                 </button>
-                
               </div>
             </div>
           </div>

@@ -293,7 +293,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Section 1: The Problem (Emotional Hook) */}
-      <section ref={problemRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-white text-[#1a5059]">
+      <section ref={problemRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 text-[#1a5059] dark:text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3 animate-fade-in-up">As Cairo grows, so do its challenges:</h2>
@@ -304,59 +304,59 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
             {/* Energy */}
-            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] border-2 border-[#e1f2ef] shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-0">
+            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] dark:bg-gray-800/60 border-2 border-[#e1f2ef] dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-0">
               <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#dda853]/30 to-[#f0e0b5]/20 blur-2xl" />
               <div className="text-3xl mb-1">⚡</div>
               <div className="text-xl font-bold"><Counter to={27} suffix="B" /> EGP</div>
-              <p className="text-[#2b515a] text-base">annual value of avoidable electricity losses (est., Egypt)</p>
+              <p className="text-[#2b515a] dark:text-gray-300 text-base">annual value of avoidable electricity losses (est., Egypt)</p>
             </div>
             {/* Water */}
-            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] border-2 border-[#e1f2ef] shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-16">
+            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] dark:bg-gray-800/60 border-2 border-[#e1f2ef] dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-16">
               <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#84f4e6]/30 to-[#2b515a]/20 blur-2xl" />
               <div className="text-3xl mb-1">💧</div>
               <div className="text-xl font-bold"><Counter to={35} suffix="%" /></div>
-              <p className="text-[#2b515a] text-base">non‑revenue water in Egypt’s networks (est.)</p>
+              <p className="text-[#2b515a] dark:text-gray-300 text-base">non‑revenue water in Egypt's networks (est.)</p>
             </div>
             {/* Waste */}
-            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] border-2 border-[#e1f2ef] shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-32">
+            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] dark:bg-gray-800/60 border-2 border-[#e1f2ef] dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-32">
               <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#5c986a]/30 to-[#c5d9a9]/20 blur-2xl" />
               <div className="text-3xl mb-1">🗑️</div>
               <div className="text-xl font-bold"><Counter to={95000} /> tons</div>
-              <p className="text-[#2b515a] text-base">municipal waste generated daily in Egypt (≈20% recycled)</p>
+              <p className="text-[#2b515a] dark:text-gray-300 text-base">municipal waste generated daily in Egypt (≈20% recycled)</p>
             </div>
             {/* Heat */}
-            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] border-2 border-[#e1f2ef] shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-48">
+            <div className="relative overflow-hidden px-3 py-2 rounded-2xl bg-[#f6faf9] dark:bg-gray-800/60 border-2 border-[#e1f2ef] dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 lg:col-span-3 lg:mt-48">
               <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#dda853]/30 to-[#5c986a]/20 blur-2xl" />
               <div className="text-3xl mb-1">🌡️</div>
               <div className="text-xl font-bold"><Counter to={7} suffix="°C" /></div>
-              <p className="text-[#2b515a] text-base">urban heat islands hotter than surroundings (major cities)</p>
+              <p className="text-[#2b515a] dark:text-gray-300 text-base">urban heat islands hotter than surroundings (major cities)</p>
             </div>
           </div>
-          <p className="text-center mt-10 text-xl text-[#2b515a]">But your city can be different...</p>
+          <p className="text-center mt-10 text-xl text-[#2b515a] dark:text-gray-300">But your city can be different...</p>
         </div>
       </section>
 
       {/* How to Use Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e7f6f3]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e7f6f3] dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-3 text-[#1a5059]">How to use UrbanEco</h2>
-          <p className="text-lg text-[#2b515a] mb-10">Three simple steps to turn data into action</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 text-[#1a5059] dark:text-white">How to use UrbanEco</h2>
+          <p className="text-lg text-[#2b515a] dark:text-gray-300 mb-10">Three simple steps to turn data into action</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="p-6 rounded-2xl bg-white border border-[#84f4e6]/30 shadow">
+            <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-[#84f4e6]/30 dark:border-gray-700 shadow">
               <div className="text-sm font-semibold text-[#5c986a] mb-1">Step 1</div>
-              <h3 className="text-xl font-bold text-[#1a5059] mb-2">Choose your path</h3>
-              <p className="text-[#2b515a]">Pick Solar (Solara), Water (Aqualis), or Landscape (Terra) and head to Analyze.</p>
+              <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-2">Choose your path</h3>
+              <p className="text-[#2b515a] dark:text-gray-300">Pick Solar (Solara), Water (Aqualis), or Landscape (Terra) and head to Analyze.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white border border-[#84f4e6]/30 shadow">
+            <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-[#84f4e6]/30 dark:border-gray-700 shadow">
               <div className="text-sm font-semibold text-[#5c986a] mb-1">Step 2</div>
-              <h3 className="text-xl font-bold text-[#1a5059] mb-2">Tell us about your site</h3>
-              <p className="text-[#2b515a]">Answer a few questions. We validate your inputs and prepare a personalized dashboard.</p>
+              <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-2">Tell us about your site</h3>
+              <p className="text-[#2b515a] dark:text-gray-300">Answer a few questions. We validate your inputs and prepare a personalized dashboard.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white border border-[#84f4e6]/30 shadow">
+            <div className="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-[#84f4e6]/30 dark:border-gray-700 shadow">
               <div className="text-sm font-semibold text-[#5c986a] mb-1">Step 3</div>
-              <h3 className="text-xl font-bold text-[#1a5059] mb-2">Explore and act</h3>
-              <p className="text-[#2b515a]">Review insights, save results, and jump into the City Builder game to test ideas.</p>
+              <h3 className="text-xl font-bold text-[#1a5059] dark:text-white mb-2">Explore and act</h3>
+              <p className="text-[#2b515a] dark:text-gray-300">Review insights, save results, and jump into the City Builder game to test ideas.</p>
             </div>
           </div>
                     <div className="flex justify-center mt-8">
@@ -372,11 +372,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Section 2: The Journey Begins */}
-      <section ref={guardiansRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e7f6f3]">
+      <section ref={guardiansRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e7f6f3] dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-[#2b515a] mb-4">Choose Your Path</h3>
-            <p className="text-[#2b515a]">Click any guardian to begin your transformation...</p>
+            <h3 className="text-2xl font-bold text-[#2b515a] dark:text-white mb-4">Choose Your Path</h3>
+            <p className="text-[#2b515a] dark:text-gray-300">Click any guardian to begin your transformation...</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -384,7 +384,7 @@ const Home: React.FC = () => {
               <div
                 key={g.id}
                 onClick={() => handleObjectiveClick(g.id)}
-                className="group cursor-pointer bg-gradient-to-br from-white to-[#eaf7f4] p-6 rounded-3xl text-left hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] card-hover border-2 border-transparent hover:border-[#dda853]"
+                className="group cursor-pointer bg-gradient-to-br from-white to-[#eaf7f4] dark:from-gray-800 dark:to-gray-700 p-6 rounded-3xl text-left hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] card-hover border-2 border-transparent hover:border-[#dda853]"
               >
                 <div className="flex items-center justify-between">
                   <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mr-6 group-hover:rotate-6 transition-transform duration-500 shadow-lg"
@@ -392,8 +392,8 @@ const Home: React.FC = () => {
                     <g.Icon className="h-10 w-10 text-white group-hover:scale-110 transition-transform" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-2xl font-bold mb-1 text-[#1a5059] group-hover:text-[#dda853] transition-colors">{g.label}</h4>
-                    <p className="text-[#2b515a]">{g.subtitle}</p>
+                    <h4 className="text-2xl font-bold mb-1 text-[#1a5059] dark:text-white group-hover:text-[#dda853] transition-colors">{g.label}</h4>
+                    <p className="text-[#2b515a] dark:text-gray-300">{g.subtitle}</p>
                   </div>
                   <ArrowRight className="h-6 w-6 text-[#5c986a] group-hover:translate-x-1 transition-transform" />
                 </div>

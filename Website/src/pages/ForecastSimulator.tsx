@@ -270,7 +270,7 @@ const ForecastSimulator: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50 dark:bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50 dark:from-gray-900 dark:to-gray-800 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-8 border border-[#84f4e6]/20">
           <div className="p-6 border-b border-[#84f4e6]/20 bg-gradient-to-r from-[#1a5059] to-[#5c986a]">
@@ -284,13 +284,13 @@ const ForecastSimulator: React.FC = () => {
           </div>
 
           {/* Input Parameters */}
-          <div className="p-6 bg-gradient-to-br from-[#c5d9a9]/10 to-white border-b border-[#84f4e6]/20">
+          <div className="p-6 bg-gradient-to-br from-[#c5d9a9]/10 to-white dark:from-gray-800 dark:to-gray-700 border-b border-[#84f4e6]/20 dark:border-gray-700">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h2 className="text-xl font-semibold text-[#1a5059] mb-4">Location & System Parameters</h2>
+                <h2 className="text-xl font-semibold text-[#1a5059] dark:text-white mb-4">Location & System Parameters</h2>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                     <MapPin className="h-4 w-4 mr-1 text-[#5c986a]" />
                     Location
                   </label>
@@ -298,7 +298,7 @@ const ForecastSimulator: React.FC = () => {
                     type="text"
                     value={location}
                     onChange={handleLocationChange}
-                    className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     placeholder="e.g., Cairo, Egypt"
                   />
                 </div>
@@ -307,7 +307,7 @@ const ForecastSimulator: React.FC = () => {
                   // Solar Parameters
                   <>
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                         <Sun className="h-4 w-4 mr-1 text-[#5c986a]" />
                         Panel Type
                       </label>
@@ -315,7 +315,7 @@ const ForecastSimulator: React.FC = () => {
                         name="panelType"
                         value={parameters.panelType}
                         onChange={handleParameterChange}
-                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       >
                         <option value="monocrystalline">Monocrystalline (High Efficiency)</option>
                         <option value="polycrystalline">Polycrystalline (Standard)</option>
@@ -324,7 +324,7 @@ const ForecastSimulator: React.FC = () => {
                     </div>
 
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                         <Sliders className="h-4 w-4 mr-1 text-[#5c986a]" />
                         Panel Size (Watts)
                       </label>
@@ -336,12 +336,12 @@ const ForecastSimulator: React.FC = () => {
                         min={250}
                         max={600}
                         step={10}
-                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       />
                     </div>
 
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                         <Sliders className="h-4 w-4 mr-1 text-[#5c986a]" />
                         Number of Panels
                       </label>
@@ -353,7 +353,7 @@ const ForecastSimulator: React.FC = () => {
                         min={10}
                         max={1000}
                         step={10}
-                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       />
                     </div>
                   </>
@@ -361,10 +361,10 @@ const ForecastSimulator: React.FC = () => {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-[#1a5059] mb-4">Financial & Installation Parameters</h2>
+                <h2 className="text-xl font-semibold text-[#1a5059] dark:text-white mb-4">Financial & Installation Parameters</h2>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                     <Sliders className="h-4 w-4 mr-1 text-[#5c986a]" />
                     Investment Range (EGP)
                   </label>
@@ -376,7 +376,7 @@ const ForecastSimulator: React.FC = () => {
                     min={100000}
                     max={10000000}
                     step={50000}
-                    className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   />
                 </div>
 
@@ -384,7 +384,7 @@ const ForecastSimulator: React.FC = () => {
                   // Solar System Parameters
                   <>
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                         <Sliders className="h-4 w-4 mr-1 text-[#5c986a]" />
                         Grid Connection
                       </label>
@@ -392,7 +392,7 @@ const ForecastSimulator: React.FC = () => {
                         name="gridConnection"
                         value={parameters.gridConnection}
                         onChange={handleParameterChange}
-                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       >
                         <option value="grid">Grid-Connected</option>
                         <option value="off-grid">Off-Grid (Battery Storage)</option>
@@ -400,7 +400,7 @@ const ForecastSimulator: React.FC = () => {
                     </div>
 
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center">
                         <Sliders className="h-4 w-4 mr-1 text-[#5c986a]" />
                         Installation Type
                       </label>
@@ -408,7 +408,7 @@ const ForecastSimulator: React.FC = () => {
                         name="installationType"
                         value={parameters.installationType}
                         onChange={handleParameterChange}
-                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border-2 border-[#84f4e6]/30 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5c986a] focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       >
                         <option value="rooftop">Rooftop Installation</option>
                         <option value="ground-mounted">Ground-Mounted System</option>
@@ -442,15 +442,15 @@ const ForecastSimulator: React.FC = () => {
 
           {/* Simulation Progress */}
           {isSimulating && (
-            <div className="p-6 border-b border-[#84f4e6]/20 bg-gradient-to-br from-[#c5d9a9]/20 to-white">
-              <h2 className="text-xl font-semibold text-[#1a5059] mb-4">Simulation in Progress</h2>
+            <div className="p-6 border-b border-[#84f4e6]/20 dark:border-gray-700 bg-gradient-to-br from-[#c5d9a9]/20 to-white dark:from-gray-800 dark:to-gray-700">
+              <h2 className="text-xl font-semibold text-[#1a5059] dark:text-white mb-4">Simulation in Progress</h2>
               <div className="w-full bg-gray-200 rounded-full h-3 mb-4 overflow-hidden">
                 <div
                   className="bg-gradient-to-r from-[#5c986a] to-[#84f4e6] h-3 rounded-full transition-all duration-300 animate-pulse"
                   style={{ width: `${simulationProgress}%` }}
                 ></div>
               </div>
-              <p className="text-sm text-gray-600 text-center font-medium">
+              <p className="text-sm text-gray-600 dark:text-gray-300 text-center font-medium">
                 {simulationProgress < 30 ? 'Analyzing location data...' :
                  simulationProgress < 60 ? 'Calculating solar production...' :
                  simulationProgress < 90 ? 'Generating financial projections...' :
@@ -463,7 +463,7 @@ const ForecastSimulator: React.FC = () => {
           {simulationComplete && (
             <div className="p-6">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                <h2 className="text-2xl font-semibold text-[#1a5059]">Simulation Results</h2>
+                <h2 className="text-2xl font-semibold text-[#1a5059] dark:text-white">Simulation Results</h2>
                 <div className="flex space-x-3 mt-4 md:mt-0">
                   <button
                     onClick={handleUseData}
@@ -473,7 +473,7 @@ const ForecastSimulator: React.FC = () => {
                   </button>
                   <button
                     onClick={handleExportReport}
-                    className="inline-flex items-center px-5 py-3 border-2 border-[#84f4e6] text-sm font-medium rounded-xl shadow-sm text-[#1a5059] bg-white hover:bg-[#c5d9a9]/20 focus:outline-none transition-all transform hover:scale-105"
+                    className="inline-flex items-center px-5 py-3 border-2 border-[#84f4e6] dark:border-gray-600 text-sm font-medium rounded-xl shadow-sm text-[#1a5059] dark:text-white bg-white dark:bg-gray-700 hover:bg-[#c5d9a9]/20 dark:hover:bg-gray-600 focus:outline-none transition-all transform hover:scale-105"
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Export Report
@@ -483,23 +483,23 @@ const ForecastSimulator: React.FC = () => {
 
               {/* Key Metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg transform hover:scale-105 transition-all">
-                  <h3 className="text-lg font-medium text-gray-700 mb-2">Annual Production</h3>
+                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-600 shadow-lg transform hover:scale-105 transition-all">
+                  <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Annual Production</h3>
                   <p className="text-3xl font-bold bg-gradient-to-r from-[#1a5059] to-[#5c986a] bg-clip-text text-transparent">{formatNumber(simulationResults.totalProduction)} kWh</p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg transform hover:scale-105 transition-all">
-                  <h3 className="text-lg font-medium text-gray-700 mb-2">Daily Average</h3>
+                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-600 shadow-lg transform hover:scale-105 transition-all">
+                  <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Daily Average</h3>
                   <p className="text-3xl font-bold bg-gradient-to-r from-[#1a5059] to-[#5c986a] bg-clip-text text-transparent">{formatNumber(simulationResults.averageDailyProduction)} kWh</p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg transform hover:scale-105 transition-all">
-                  <h3 className="text-lg font-medium text-gray-700 mb-2">CO₂ Reduction</h3>
+                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-600 shadow-lg transform hover:scale-105 transition-all">
+                  <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">CO₂ Reduction</h3>
                   <p className="text-3xl font-bold bg-gradient-to-r from-[#1a5059] to-[#5c986a] bg-clip-text text-transparent">{formatNumber(simulationResults.co2Reduction)} kg/year</p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg transform hover:scale-105 transition-all">
-                  <h3 className="text-lg font-medium text-gray-700 mb-2">ROI Period</h3>
+                <div className="bg-gradient-to-br from-[#5c986a]/10 to-[#84f4e6]/10 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-600 shadow-lg transform hover:scale-105 transition-all">
+                  <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">ROI Period</h3>
                   <p className="text-3xl font-bold bg-gradient-to-r from-[#1a5059] to-[#5c986a] bg-clip-text text-transparent">{simulationResults.roi} years</p>
                 </div>
               </div>
@@ -507,8 +507,8 @@ const ForecastSimulator: React.FC = () => {
               {/* Charts */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 {/* Daily Production Chart */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg">
-                  <h3 className="text-lg font-medium text-[#1a5059] mb-4">Daily Production Profile</h3>
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-700 shadow-lg">
+                  <h3 className="text-lg font-medium text-[#1a5059] dark:text-white mb-4">Daily Production Profile</h3>
                   <div className="h-80">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={simulationResults.dailyProduction}>
@@ -529,8 +529,8 @@ const ForecastSimulator: React.FC = () => {
                 </div>
 
                 {/* Monthly Production Chart */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg">
-                  <h3 className="text-lg font-medium text-[#1a5059] mb-4">Monthly Production</h3>
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-700 shadow-lg">
+                  <h3 className="text-lg font-medium text-[#1a5059] dark:text-white mb-4">Monthly Production</h3>
                   <div className="h-80">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={simulationResults.monthlyProduction}>
@@ -553,8 +553,8 @@ const ForecastSimulator: React.FC = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Long-term Production Chart */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg">
-                  <h3 className="text-lg font-medium text-[#1a5059] mb-4">25-Year Production Forecast</h3>
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-700 shadow-lg">
+                  <h3 className="text-lg font-medium text-[#1a5059] dark:text-white mb-4">25-Year Production Forecast</h3>
                   <div className="h-80">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={simulationResults.yearlyProduction}>
@@ -569,8 +569,8 @@ const ForecastSimulator: React.FC = () => {
                 </div>
 
                 {/* Panel Degradation Chart */}
-                <div className="bg-white p-6 rounded-2xl border-2 border-[#84f4e6]/30 shadow-lg">
-                  <h3 className="text-lg font-medium text-[#1a5059] mb-4">Panel Efficiency Over Time</h3>
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border-2 border-[#84f4e6]/30 dark:border-gray-700 shadow-lg">
+                  <h3 className="text-lg font-medium text-[#1a5059] dark:text-white mb-4">Panel Efficiency Over Time</h3>
                   <div className="h-80">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={simulationResults.degradation}>
